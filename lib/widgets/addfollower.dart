@@ -13,40 +13,10 @@ class AddFollowerCount extends StatelessWidget {
     return
        Column(
          children: [
-           SizedBox(
-             height: 20,
-             child: FloatingActionButton(
-              onPressed: () {storeController.updateFollowerCount();
-              },
 
-              child: const Icon(Icons.add ,size: 10,),
-      ),
-           ),
-           SizedBox(
-             height: 20,
-             child: FloatingActionButton(
-               onPressed: () {
-                 if(storeController.follwerCount>0)
-                 storeController.deleteFollowerCount();
-                 else
-                   Get.defaultDialog(
-                     title: 'Neative number is not posible'
-                         ,
-                     middleText: 'please GetBack',
-                     textConfirm: 'okay'
-                       ,
-                     confirm: OutlinedButton(onPressed: (){
-                       Get.back();
-                     }, child: Icon(Icons.backspace_outlined))
-                   );
-               },
-
-               child: const Icon(Icons.delete_outline ,size: 10,),
-             ),
-           ),
 
        Container(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.only(top: 24),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -57,7 +27,7 @@ class AddFollowerCount extends StatelessWidget {
                 style: TextStyle(fontSize: 28),
               ),
               const SizedBox(
-                height: 40.0,
+                height: 20.0,
               ),
               // Obx(
               //       () => Text(
@@ -69,7 +39,45 @@ class AddFollowerCount extends StatelessWidget {
           ),
         ),
       ),
-    ]
+           Row(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: [
+               SizedBox(
+                 height: 40,
+                 child: FloatingActionButton(
+                   onPressed: () {storeController.updateFollowerCount();
+                   },
+
+                   child: const Icon(Icons.add ,size: 20,),
+                 ),
+               ),
+
+               SizedBox(
+                 height: 40,
+                 child: FloatingActionButton(
+                   onPressed: () {
+                     if(storeController.follwerCount>0)
+                       storeController.deleteFollowerCount();
+                     else
+                       Get.defaultDialog(
+                           title: 'Neative number is not posible'
+                           ,
+                           middleText: 'please GetBack',
+                           textConfirm: 'okay'
+                           ,
+                           confirm: OutlinedButton(onPressed: (){
+                             Get.back();
+                           }, child: Text('Back',style: TextStyle(fontSize: 20),))
+                       );
+                   },
+
+                   child: const Text('-',style: TextStyle(fontSize: 30,fontWeight: FontWeight.w400)),
+                 ),
+               ),
+             ],
+           ),
+
+         ]
     );
   }
 }

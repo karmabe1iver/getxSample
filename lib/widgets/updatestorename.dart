@@ -24,7 +24,9 @@ class UpdateStoreName extends StatelessWidget {
             snackPosition: SnackPosition.BOTTOM
             );
           }, child: Text('Update'
-          ,style: TextStyle(fontSize: 20),))
+          ,style: TextStyle(fontSize: 20),),
+            style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.cyanAccent)),
+          )
         ],
 
     );

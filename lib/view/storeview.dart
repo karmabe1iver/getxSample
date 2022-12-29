@@ -17,18 +17,23 @@ class Home extends GetView<StoreController> {
       //  backgroundColor: AppColors.spaceCadet,
       appBar: AppBar(
         title: const Text("GetX Store"),
-        actions: [IconButton(
-          onPressed: () {
-            if (Get.isDarkMode) {
-              themeController.changeTheme(ThemeData.light());
-              themeController.saveTheme(false);
-            } else {
-              themeController.changeTheme(ThemeData.dark());
-              themeController.saveTheme(true); }},
-          icon: Get.isDarkMode
-              ? const Icon(Icons.light_mode_outlined)
-              : const Icon(Icons.dark_mode_outlined),),], ),
-
+        actions: [
+          IconButton(
+            onPressed: () {
+              if (Get.isDarkMode) {
+                themeController.changeTheme(ThemeData.light());
+                themeController.saveTheme(false);
+              } else {
+                themeController.changeTheme(ThemeData.dark());
+                themeController.saveTheme(true);
+              }
+            },
+            icon: Get.isDarkMode
+                ? const Icon(Icons.light_mode_outlined)
+                : const Icon(Icons.dark_mode_outlined),
+          ),
+        ],
+      ),
 
       //  drawer: const SideDrawer(),
       body: Container(
@@ -79,7 +84,6 @@ class Home extends GetView<StoreController> {
                       Obx(
                         () => Flexible(
                           child: Text(
-
                             controller.follwerCount.value.toString(),
                             textAlign: TextAlign.start,
                             style: const TextStyle(
@@ -123,9 +127,18 @@ class Home extends GetView<StoreController> {
                   ),
                 ],
               ),
-              AddFollowerCount(),
-            StoreStatus(),
-            UpdateStoreName(),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: AddFollowerCount(),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: StoreStatus(),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: UpdateStoreName(),
+              ),
             ],
           ),
         ),

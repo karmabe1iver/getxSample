@@ -7,7 +7,7 @@ class StoreController extends GetxController{
   final follwerCount=0.obs;
   final storeStatus= true.obs;
   final followeList=[].obs;
- // final reviews=<StoreReviews>[].obs;
+  final reviews=<StoreReviews>[].obs;
   final storeNameEditingController= TextEditingController();
   final reviewEditingController= TextEditingController();
   final followerController=TextEditingController();
@@ -28,5 +28,9 @@ class StoreController extends GetxController{
   void StoreStatusOpen(bool isOpen){
     storeStatus(isOpen);
   }
+
+}
+
+class StoreReviews {
 
 }
