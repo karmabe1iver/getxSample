@@ -11,9 +11,7 @@ class StoreStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Test Status Toggle")),
-      body: Container(
+    return  Container(
         padding: const EdgeInsets.all(24),
         child: Center(
           child: Column(
@@ -34,7 +32,7 @@ class StoreStatus extends StatelessWidget {
             ],
           ),
         ),
-      ),
+
     );
   }
 }

@@ -11,8 +11,7 @@ class UpdateStoreName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Column(
+    return Column(
         children: [
           TextField(
             controller: storeController.storeNameEditingController,
@@ -27,7 +26,7 @@ class UpdateStoreName extends StatelessWidget {
           }, child: Text('Update'
           ,style: TextStyle(fontSize: 20),))
         ],
-      ),
+
     );
   }
 }

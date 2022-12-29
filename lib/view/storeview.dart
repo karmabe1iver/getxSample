@@ -3,6 +3,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:getx2/controllers/storecontroller.dart';
 import 'package:getx2/view/themecontoller.dart';
+import 'package:getx2/widgets/addfollower.dart';
+import 'package:getx2/widgets/storestatus.dart';
+import 'package:getx2/widgets/updatestorename.dart';
 
 class Home extends GetView<StoreController> {
   final storeController = Get.put(StoreController());
@@ -17,10 +20,10 @@ class Home extends GetView<StoreController> {
         actions: [IconButton(
           onPressed: () {
             if (Get.isDarkMode) {
-              themeController.changeTheme(ThemeData.dark());
+              themeController.changeTheme(ThemeData.light());
               themeController.saveTheme(false);
             } else {
-              themeController.changeTheme(ThemeData.light());
+              themeController.changeTheme(ThemeData.dark());
               themeController.saveTheme(true); }},
           icon: Get.isDarkMode
               ? const Icon(Icons.light_mode_outlined)
@@ -119,6 +122,9 @@ class Home extends GetView<StoreController> {
                   ),
                 ],
               ),
+              AddFollowerCount(),
+            StoreStatus(),
+            UpdateStoreName(),
             ],
           ),
         ),

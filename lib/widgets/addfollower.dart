@@ -10,14 +10,20 @@ class AddFollowerCount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Add Follower Count")),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {storeController.updateFollowerCount();
-        },
-        child: const Icon(Icons.add),
+    return
+       Column(
+         children: [
+           SizedBox(
+             height: 20,
+             child: FloatingActionButton(
+              onPressed: () {storeController.updateFollowerCount();
+              },
+
+              child: const Icon(Icons.add ,size: 10,),
       ),
-      body: Container(
+           ),
+
+       Container(
         padding: const EdgeInsets.all(24),
         child: Center(
           child: Column(
@@ -31,16 +37,17 @@ class AddFollowerCount extends StatelessWidget {
               const SizedBox(
                 height: 40.0,
               ),
-              Obx(
-                    () => Text(
-                  storeController.follwerCount.value.toString(),
-                  style: const TextStyle(fontSize: 48),
-                ),
-              )
+              // Obx(
+              //       () => Text(
+              //     storeController.follwerCount.value.toString(),
+              //     style: const TextStyle(fontSize: 28),
+              //   ),
+              // )
             ],
           ),
         ),
       ),
+    ]
     );
   }
 }
