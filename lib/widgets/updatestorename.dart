@@ -25,7 +25,7 @@ class UpdateStoreName extends StatelessWidget {
             );
           }, child: Text('Update'
           ,style: TextStyle(fontSize: 20),),
-            style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.cyanAccent)),
+            style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.green)),
           )
         ],
 
