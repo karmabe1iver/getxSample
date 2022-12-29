@@ -79,6 +79,7 @@ class Home extends GetView<StoreController> {
                       Obx(
                         () => Flexible(
                           child: Text(
+
                             controller.follwerCount.value.toString(),
                             textAlign: TextAlign.start,
                             style: const TextStyle(

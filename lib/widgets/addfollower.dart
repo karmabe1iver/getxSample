@@ -22,6 +22,28 @@ class AddFollowerCount extends StatelessWidget {
               child: const Icon(Icons.add ,size: 10,),
       ),
            ),
+           SizedBox(
+             height: 20,
+             child: FloatingActionButton(
+               onPressed: () {
+                 if(storeController.follwerCount>0)
+                 storeController.deleteFollowerCount();
+                 else
+                   Get.defaultDialog(
+                     title: 'Neative number is not posible'
+                         ,
+                     middleText: 'please GetBack',
+                     textConfirm: 'okay'
+                       ,
+                     confirm: OutlinedButton(onPressed: (){
+                       Get.back();
+                     }, child: Icon(Icons.backspace_outlined))
+                   );
+               },
+
+               child: const Icon(Icons.delete_outline ,size: 10,),
+             ),
+           ),
 
        Container(
         padding: const EdgeInsets.all(24),

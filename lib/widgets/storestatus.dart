@@ -24,7 +24,9 @@ class StoreStatus extends StatelessWidget {
               const SizedBox(height: 16),
               Obx(
                     () => Switch(
-                  onChanged: (value) => storeController.storeStatus(value),
+                  onChanged: (value) { storeController.storeStatus(value);
+                    Get.snackbar('Store', 'store is ${ storeController.storeStatus(value)?'open':'close'
+                    }',snackPosition: SnackPosition.TOP);},
                   activeColor: Colors.green,
                   value: storeController.storeStatus.value,
                 ),

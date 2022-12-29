@@ -19,6 +19,12 @@ class StoreController extends GetxController{
   updateFollowerCount(){
     follwerCount(follwerCount.value+1);
   }
+  deleteFollowerCount(){
+    if(follwerCount.value>0)
+    follwerCount(follwerCount.value-1);
+    else
+      follwerCount(follwerCount.value);
+  }
   void StoreStatusOpen(bool isOpen){
     storeStatus(isOpen);
   }
